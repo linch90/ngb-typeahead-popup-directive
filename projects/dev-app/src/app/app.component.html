@@ -1,0 +1,16 @@
+<div class="mt-2">
+  <input
+    #typeahead
+    [ngbTypeahead]="search"
+    [editable]="false"
+    [inputFormatter]="typeaheadFormatter"
+    [resultFormatter]="typeaheadFormatter"
+    [(ngModel)]="selectedOption"
+    (blur)="selectedOption || (typeahead.value = '')"
+    class="form-control"
+    ngbTypeaheadPopup
+  />
+
+  value:
+  <span>{{ selectedOption ? selectedOption["displayName"] : "" }}</span>
+</div>
