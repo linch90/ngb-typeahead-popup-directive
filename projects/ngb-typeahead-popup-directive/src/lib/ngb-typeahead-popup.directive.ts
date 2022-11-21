@@ -7,9 +7,10 @@ import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 export class NgbTypeaheadPopupDirective {
   @HostListener('focus', ['$event.target'])
   @HostListener('click', ['$event.target'])
-  onClick(t: any) {
+  onClick(target: any) {
+    if (target.value) return;
     if (!this.typeahead || !this.typeahead.isPopupOpen())
-      t.dispatchEvent(new Event('input'));
+      target.dispatchEvent(new Event('input'));
   }
 
   constructor(@Optional() private typeahead: NgbTypeahead) {}
