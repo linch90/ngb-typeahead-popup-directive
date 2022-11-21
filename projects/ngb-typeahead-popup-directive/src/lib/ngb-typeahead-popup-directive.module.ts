@@ -5,6 +5,6 @@ import { NgbTypeaheadPopupDirective } from './ngb-typeahead-popup.directive';
 @NgModule({
   declarations: [NgbTypeaheadPopupDirective],
   imports: [NgbTypeaheadModule],
-  exports: [NgbTypeaheadPopupDirective, NgbTypeaheadModule],
+  exports: [NgbTypeaheadPopupDirective],
 })
 export class NgbTypeaheadPopupDirectiveModule {}
