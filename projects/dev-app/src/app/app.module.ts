@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbTypeaheadPopupDirectiveModule } from '@linch90/ngb-typeahead-popup-directive';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    NgbTypeaheadModule,
     NgbTypeaheadPopupDirectiveModule,
   ],
   providers: [],
