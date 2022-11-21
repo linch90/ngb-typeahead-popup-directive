@@ -9,8 +9,12 @@ export class NgbTypeaheadPopupDirective {
   @HostListener('click', ['$event.target'])
   onClick(target: any) {
     if (target.value) return;
-    if (!this.typeahead || !this.typeahead.isPopupOpen())
+    if (!this.typeahead || !this.typeahead.isPopupOpen()) {
       target.dispatchEvent(new Event('input'));
+      setTimeout(() => {
+        target.classList.remove('ng-dirty');
+      }, 0);
+    }
   }
 
   constructor(@Optional() private typeahead: NgbTypeahead) {}
