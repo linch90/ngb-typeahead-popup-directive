@@ -8,7 +8,7 @@ export class NgbTypeaheadPopupDirective {
   @HostListener('focus', ['$event.target'])
   @HostListener('click', ['$event.target'])
   onClick(t: any) {
-    if (this.typeahead && !this.typeahead.isPopupOpen())
+    if (!this.typeahead || !this.typeahead.isPopupOpen())
       t.dispatchEvent(new Event('input'));
   }
 
